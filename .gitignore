@@ -1,0 +1,25 @@
+# Build directory with intermediate files
+build/
+
+
+# Reference docs (not part of this project)
+docs/
+
+latex/
+
+# LaTeX intermediate files (in all directories)
+**/*.aux
+**/*.log
+**/*.out
+**/*.toc
+**/*.lof
+**/*.lot
+**/*.bbl
+**/*.blg
+**/*.fdb_latexmk
+**/*.fls
+**/*.synctex.gz
+**/*.synctex(busy)
+
+# macOS
+.DS_Store
