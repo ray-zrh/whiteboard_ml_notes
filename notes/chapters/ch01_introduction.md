@@ -128,7 +128,7 @@ $$
 \theta_{MAP} = \operatorname*{argmax}_{\theta} p(\theta|X) = \operatorname*{argmax}_{\theta} p(X|\theta) \cdot p(\theta)
 $$
 
-![MAP Estimation Diagram](assets/map_estimation.png)
+![MAP Estimation Diagram](assets/ch01_map_estimation.png)
 
 > **注意**：
 > 1.  如图所示，**MAP 估计** 就是寻找后验概率密度函数曲线的**最高点（峰值/Mode）**对应的 $\theta$ 值。
