@@ -17,5 +17,6 @@
 | **01** | [绪论 (Introduction)](notes/chapters/ch01_introduction.md) | ✅ Done |
 | **02** | [数学基础 (Math Foundations)](notes/chapters/ch02_math_foundations.md) | ✅ Done |
 | **03** | [线性回归 (Linear Regression)](notes/chapters/ch03_linear_regression.md) | ✅ Done |
-| **04** | 线性分类 (Linear Classification) | 🚧 Planned |
+| **04** | [线性分类 (Linear Classification)](notes/chapters/ch04_linear_classification.md) | ✅ Done |
+| **05** | [降维 (Dimensionality Reduction)](notes/chapters/ch05_dimensionality_reduction.md) | 🚧 Planned |
 

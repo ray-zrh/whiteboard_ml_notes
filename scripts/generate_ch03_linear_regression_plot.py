@@ -1,103 +1,115 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.patches import Rectangle
 
 # Set style
-plt.xkcd()  # Use xkcd style for a hand-drawn look, or just standard with clean lines.
-# actually, for a "notes" style, a clean plot is usually better than xkcd, but the user gave a sketch.
-# Let's stick to a clean professional style but with the specific annotations requested.
-plt.rcdefaults()
 plt.style.use('seaborn-v0_8-whitegrid')
 
 # Data generation
 np.random.seed(42)
-x = np.linspace(1, 9, 10)
+x = np.linspace(1, 9, 8) # Fewer points for clearer visualization
 true_w = 0.8
-noise = np.random.randn(10) * 1.5
+noise = np.random.randn(8) * 1.5
 y = true_w * x + 2 + noise
 
-# Fit line (just for drawing a nice line)
+# Fit line
 w_hat = np.polyfit(x, y, 1)
 f = np.poly1d(w_hat)
 x_line = np.linspace(0, 10, 100)
 y_line = f(x_line)
 
 # Setup plot
-fig, ax = plt.subplots(figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(10, 8))
 
-# Remove top and right spines
+# Remove frames
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
-# Move left and bottom spines to zero position
 ax.spines['left'].set_position('zero')
 ax.spines['bottom'].set_position('zero')
-# Add arrows to spines (hacky way in matplotlib)
+
+# Add explicit arrows for axes
 ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
 ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 
-# Plot data points
-ax.scatter(x, y, marker='x', color='black', s=80, label='Data points')
+# Plot Data points
+ax.scatter(x, y, marker='o', color='black', s=80, label='Data $y_i$', zorder=5)
 
-# Plot regression line
-ax.plot(x_line, y_line, 'k-', linewidth=2, label=r'$f(w) = w^T x$')
+# Plot Regression Line
+ax.plot(x_line, y_line, color='#e74c3c', linewidth=2.5, label=r'Model $f(x) = w^T x$')
 
-# Highlight a specific point (e.g., index 3)
-idx = 3
-x_i = x[idx]
-y_i = y[idx]
-y_hat_i = f(x_i)
-
-# Draw residual line
-ax.plot([x_i, x_i], [y_i, y_hat_i], 'k-', linewidth=1.5)
-
-# Dashed lines to axes
-# To x-axis
-ax.plot([x_i, x_i], [0, y_hat_i], 'k--', linewidth=1, alpha=0.6)
-# To y-axis (true y)
-ax.plot([0, x_i], [y_i, y_i], 'k--', linewidth=1, alpha=0.6)
-# To y-axis (predicted y)
-ax.plot([0, x_i], [y_hat_i, y_hat_i], 'k--', linewidth=1, alpha=0.6)
-
-# Labels
-# x_i on x-axis
-ax.text(x_i, -1, r'$x_i$', ha='center', fontsize=12)
-# y_i on y-axis
-ax.text(-0.8, y_i, r'$y_i$', va='center', fontsize=12)
-# y_hat on y-axis
-ax.text(-1.5, y_hat_i, r'$w^T x_i$', va='center', fontsize=12)
-# Function label - aligned with the line
-# Calculate angle for rotation (handling aspect ratio roughly)
-# Data aspect ratio: y_range/x_range = 14/12 ~ 1.16
-# Figure aspect ratio: 6/8 = 0.75
-# This is an approximation. For exact rotation, one would transform points to display coords.
-# But for this simple plot, manual tuning or a helper is fine.
-p1 = ax.transData.transform((0, f(0)))
-p2 = ax.transData.transform((10, f(10)))
-dy = p2[1] - p1[1]
-dx = p2[0] - p1[0]
-angle = np.degrees(np.arctan2(dy, dx))
-
-# Position the text on the line, slightly offset
-# User requested parallel to x-axis (rotation=0) and no overlap.
-# Putting it at x=9.5 (data ends at 9.0) ensures no overlap with data points.
-label_x = 9.5
-label_y = f(label_x)
-# Add a small vertical offset in data coordinates? No, better to use verticalalignment='top' to put it below
-# We also add a small negative offset to label_y just to clear the line thickness
-ax.text(label_x, label_y - 0.5, r'$f(w) = w^T x$', fontsize=14, rotation=0,
-        ha='center', va='top', color='black', bbox=dict(facecolor='white', edgecolor='none', alpha=0.7, pad=2))
-
-# Residual arrows/lines for other points to mimic the sketch
+# Draw Residuals and Squares
 for i in range(len(x)):
-    if i == idx: continue
-    ax.plot([x[i], x[i]], [y[i], f(x[i])], 'k-', linewidth=0.8, alpha=0.7)
+    xi = x[i]
+    yi = y[i]
+    y_hat_i = f(xi)
+    resid = yi - y_hat_i
+
+    # 1. Draw Residual Line (Green Dashed)
+    ax.plot([xi, xi], [yi, y_hat_i], color='#2ecc71', linestyle='--', linewidth=1.5)
+
+    # 2. Draw Square representing (residual)^2
+    # Determine direction of square (left or right) to avoid overlap if possible
+    # Default to right
+    direction = 1
+    if i % 2 == 0: direction = -1 # Alternate sides
+
+    # Square corners
+    # Bottom-left (or Bottom-right) corresponds to min(yi, y_hat_i)
+    base_y = min(yi, y_hat_i)
+    height = abs(resid)
+
+    # Create Rectangle patch
+    # xy is bottom-left corner
+    fixed_x = xi if direction == 1 else xi - height
+
+    rect = Rectangle((fixed_x, base_y), height, height,
+                     linewidth=0, edgecolor='none', facecolor='#2ecc71', alpha=0.2)
+    ax.add_patch(rect)
+
+
+# Annotate a representative point (e.g., index 2)
+idx = 2
+xi = x[idx]
+yi = y[idx]
+y_hat_i = f(xi)
+resid = yi - y_hat_i
+
+# Label x_i
+ax.text(xi, -0.8, r'$x_i$', ha='center', fontsize=12)
+# Label y_i
+ax.text(xi + 0.2, yi, r'$y_i$', va='center', fontsize=12, fontweight='bold')
+# Label residual e_i (put text next to the line)
+ax.text(xi - 0.2, (yi + y_hat_i)/2, r'$e_i$', color='#2ecc71', ha='right', va='center', fontsize=12, fontweight='bold')
+# Label square area
+ax.text(xi + (0.5 if i%2!=0 else -0.5)*abs(resid), (yi + y_hat_i)/2, r'$e_i^2$', color='#2ecc71', ha='center', va='center', fontsize=10, alpha=0.8)
+
+
+# Equation Label
+label_x = 9.0
+label_y = f(label_x)
+ax.text(label_x, label_y - 1.0, r'$f(w) = w^T x$', fontsize=14, color='#e74c3c', ha='center')
+
+# Title
+ax.set_title('Geometric Interpretation: Minimizing Sum of Squared Residuals', fontsize=14, pad=20)
 
 # Adjust limits
-ax.set_xlim(-1, 11)
-ax.set_ylim(-2, 12)
+ax.set_xlim(-1, 12)
+ax.set_ylim(-2, 14)
 ax.set_xticks([])
 ax.set_yticks([])
 
-# Save
+# Legend
+from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
+legend_elements = [
+    Line2D([0], [0], marker='o', color='black', label='Observed Data $y$', markerfacecolor='black', markersize=8, linestyle='None'),
+    Line2D([0], [0], color='#e74c3c', lw=2.5, label='Regression Line $f(w)$'),
+    Line2D([0], [0], color='#2ecc71', lw=1.5, linestyle='--', label=r'Residual $e = y - \hat{y}$'),
+    Patch(facecolor='#2ecc71', alpha=0.2, label='Squared Error $e^2$'),
+]
+ax.legend(handles=legend_elements, loc='upper left', framealpha=0.9, fontsize=11)
+
+plt.tight_layout()
 output_path = "notes/chapters/assets/ch03_linear_regression_plot.png"
 plt.savefig(output_path, dpi=300, bbox_inches='tight')
 print(f"Image saved to {output_path}")
