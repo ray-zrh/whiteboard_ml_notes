@@ -62,14 +62,14 @@
 
 - **数据 (Data)**：有$N$个样本，每个样本的维度为$p$， 可以记作$X = (x_1, x_2, \ldots, x_N)^T$ ，为 $N \times p$ 矩阵
 
-$$
-X = \begin{pmatrix}
-x_{11} & x_{12} & \cdots & x_{1p} \\
-x_{21} & x_{22} & \cdots & x_{2p} \\
-\vdots & \vdots & \ddots & \vdots \\
-x_{N1} & x_{N2} & \cdots & x_{Np}
-\end{pmatrix}_{N \times p}
-$$
+    $$
+    X = \begin{pmatrix}
+    x_{11} & x_{12} & \cdots & x_{1p} \\
+    x_{21} & x_{22} & \cdots & x_{2p} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    x_{N1} & x_{N2} & \cdots & x_{Np}
+    \end{pmatrix}_{N \times p}
+    $$
 
 - **参数 (Parameter)**： $\theta$未知，需要估计出来
 
@@ -82,9 +82,9 @@ $$
 - 目标：通过**最大似然估计 (MLE)** 找到最优参数
 
 
-$$
-\theta_{MLE} = \arg\max_{\theta} \log P(X|\theta)
-$$
+    $$
+    \theta_{MLE} = \arg\max_{\theta} \log P(X|\theta)
+    $$
 
 **原理解释：**
 

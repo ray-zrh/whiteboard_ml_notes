@@ -183,11 +183,17 @@ $$
 利用方差公式 $Var(X) = E[X^2] - (E[X])^2 \implies E[X^2] = Var(X) + (E[X])^2$：
 
 1.对于 $x_i$：
-$$E[x_i^2] = Var(x_i) + (E[x_i])^2 = \sigma^2 + \mu^2$$
+$$
+E[x_i^2] = Var(x_i) + (E[x_i])^2 = \sigma^2 + \mu^2
+$$
 
 2.对于 $\mu_{MLE}$：
-$$Var(\mu_{MLE}) = Var\left( \frac{1}{N}\sum x_i \right) = \frac{1}{N^2}\sum Var(x_i) = \frac{1}{N^2} \cdot N\sigma^2 = \frac{\sigma^2}{N}$$
-$$E[\mu_{MLE}^2] = Var(\mu_{MLE}) + (E[\mu_{MLE}])^2 = \frac{\sigma^2}{N} + \mu^2$$
+$$
+Var(\mu_{MLE}) = Var\left( \frac{1}{N}\sum x_i \right) = \frac{1}{N^2}\sum Var(x_i) = \frac{1}{N^2} \cdot N\sigma^2 = \frac{\sigma^2}{N}
+$$
+$$
+E[\mu_{MLE}^2] = Var(\mu_{MLE}) + (E[\mu_{MLE}])^2 = \frac{\sigma^2}{N} + \mu^2
+$$
 
 代入期望公式：
 $$
@@ -212,10 +218,12 @@ $$
 
 1.  **样本均值 vs 真实均值**：$\mu_{MLE}$ 是根据当前样本计算出来的“中心”，它会自然地向样本点“靠拢”。
 2.  **误差最小化**：对于任意一组数据，$\sum(x_i - a)^2$ 在 $a = \mu_{MLE}$ 时取最小值。也就是说：
+
     $$
     \sum_{i=1}^{N} (x_i - \mu_{MLE})^2 < \sum_{i=1}^{N} (x_i - \mu)^2
     $$
-    （除非 $\mu_{MLE}$ 恰好等于 $\mu$）。
+（除非 $\mu_{MLE}$ 恰好等于 $\mu$）。
+
 3.  **结果偏小**：我们在计算方差时使用了“更近”的 $\mu_{MLE}$ 而不是真实的 $\mu$，导致计算出的平方和偏小，从而低估了真实的方差。
 4.  **修正**：为了补偿这个低估，我们将分母从 $N$ 改为 $N-1$，从而得到稍大一点的无偏估计 $\hat{\sigma}^2$。
 
@@ -257,10 +265,11 @@ $$
     *   特征向量 (Eigenvectors) 决定了椭圆的主轴方向。
     *   特征值 (Eigenvalues) 决定了数据在主轴方向上的分散程度（方差）。
 *   **退化为欧氏距离**：如果 $\Sigma = I$（单位矩阵），则：
+
     $$
     (x-\mu)^T I^{-1} (x-\mu) = (x-\mu)^T (x-\mu) = \sum_{j=1}^{p} (x_j - \mu_j)^2
     $$
-    此时马氏距离就变成了标准的**欧氏距离 (Euclidean Distance)**，分布形状为正圆（或超球体）。
+此时马氏距离就变成了标准的**欧氏距离 (Euclidean Distance)**，分布形状为正圆（或超球体）。
 
 ### 3.3 协方差矩阵的特征值分解 (Eigendecomposition)
 
@@ -412,8 +421,10 @@ $$
 为了解决单高斯的局限性，我们引入**高斯混合模型 (GMM)**。
 
 *   **核心思想**：通过线性组合多个高斯分布来拟合复杂数据。
+
     $$
     P(x) = \sum_{k=1}^{K} \pi_k \mathcal{N}(x|\mu_k, \Sigma_k)
+
     $$
 *   这就像是用多个不同大小、位置和形状的“高斯积木”搭建出一个复杂的分布形状。
 *   理论上，只要 $K$ 足够大，GMM 可以逼近任意连续的概率密度函数。
@@ -459,11 +470,14 @@ $$
 其期望与方差的推导如下：
 
 *   **期望 (Expectation)**:
+
     $$
     E[y] = E[Ax + B] = A E[x] + B = A \mu + B
+
     $$
 
 *   **方差 (Variance)**:
+
     $$
     \begin{aligned}
     Var[y] &= Var[Ax + B] \\
@@ -471,6 +485,7 @@ $$
     &= A \cdot Var[x] \cdot A^T \\
     &= A \cdot \Sigma \cdot A^T
     \end{aligned}
+
     $$
 
 **边缘分布推导 (Derivation of Marginal Distribution)**
@@ -538,15 +553,18 @@ $$
 **计算期望与方差**：
 
 *   **期望**：
+
     $$
     \begin{aligned}
     E[x_{b \cdot a}] &= \mu_b - \Sigma_{ba}\Sigma_{aa}^{-1}\mu_a \\
     &\triangleq \mu_{b \cdot a}
     \end{aligned}
+
     $$
 
 *   **方差**：
     利用公式 $Var[Ax] = A \Sigma A^T$：
+
     $$
     \begin{aligned}
     Var[x_{b \cdot a}] &= \begin{pmatrix} -\Sigma_{ba}\Sigma_{aa}^{-1} & I_n \end{pmatrix} \begin{pmatrix} \Sigma_{aa} & \Sigma_{ab} \\ \Sigma_{ba} & \Sigma_{bb} \end{pmatrix} \begin{pmatrix} -\Sigma_{aa}^{-1}\Sigma_{ab} \\ I_n \end{pmatrix} \\
@@ -554,6 +572,7 @@ $$
     &= \Sigma_{bb} - \Sigma_{ba}\Sigma_{aa}^{-1}\Sigma_{ab} \\
     &\triangleq \Sigma_{bb \cdot a} \quad (\text{Schur Complement})
     \end{aligned}
+
     $$
 
 **利用独立性质求解条件分布**：
@@ -571,14 +590,17 @@ $$
 在给定 $x_a$ 的条件下：
 
 *   **期望**：
+
     $$
     E[x_b | x_a] = \mu_{b \cdot a} + \Sigma_{ba}\Sigma_{aa}^{-1}x_a
     $$
-    （注意：上式代入 $\mu_{b \cdot a}$ 定义后即等于 $\mu_b + \Sigma_{ba}\Sigma_{aa}^{-1}(x_a - \mu_a)$）
+（注意：上式代入 $\mu_{b \cdot a}$ 定义后即等于 $\mu_b + \Sigma_{ba}\Sigma_{aa}^{-1}(x_a - \mu_a)$）
 
 *   **方差**：
+
     $$
     Var[x_b | x_a] = Var[x_{b \cdot a}] = \Sigma_{bb \cdot a}
+
     $$
 
 因此，我们得到最终结果：
@@ -626,13 +648,17 @@ $$
 我们利用期望和方差的性质来求解 $y$ 的边缘分布。
 
 *   **期望**：
+
     $$
     E[y] = E[Ax + b + \epsilon] = E[Ax + b] + E[\epsilon] = A\mu + b
+
     $$
 *   **方差**：
     由于 $x$ 与 $\epsilon$ 独立，方差具有可加性：
+
     $$
     Var[y] = Var[Ax + b + \epsilon] = Var[Ax + b] + Var[\epsilon] = A \Lambda^{-1} A^T + L^{-1}
+
     $$
 
 因此：

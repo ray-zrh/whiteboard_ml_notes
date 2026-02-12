@@ -5,7 +5,13 @@ build/
 # Reference docs (not part of this project)
 docs/
 
+# VSCode settings
+.vscode/
+
+# LaTeX docs (not part of this project)
 latex/
+
+.agent
 
 # LaTeX intermediate files (in all directories)
 **/*.aux

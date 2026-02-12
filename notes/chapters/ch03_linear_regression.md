@@ -43,12 +43,16 @@ $$
 
 定义：
 *   **设计矩阵 (Design Matrix)** $X \in \mathbb{R}^{N \times p}$：
+
     $$
     X = (x_1, x_2, \ldots, x_N)^T = \begin{pmatrix} x_1^T \\ x_2^T \\ \vdots \\ x_N^T \end{pmatrix} = \begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1p} \\ x_{21} & x_{22} & \cdots & x_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ x_{N1} & x_{N2} & \cdots & x_{Np} \end{pmatrix}
+
     $$
 *   **标签向量 (Label Vector)** $Y \in \mathbb{R}^{N \times 1}$：
+
     $$
     Y = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_N \end{pmatrix}
+
     $$
 
 此时，损失函数可以重写为：
@@ -207,10 +211,17 @@ $$
 
 常见的两种正则化：
 1.  **L1 正则化 (Lasso)**：
-    $$ P(w) = ||w||_1 = \sum |w_j| $$
+
+  $$
+  P(w) = ||w||_1 = \sum |w_j|
+  $$
 2.  **L2 正则化 (Ridge / 岭回归)**：
-    $$ P(w) = ||w||_2^2 = w^T w $$
-    这也常被称为**权重衰减 (Weight Decay)**。
+
+  $$
+  P(w) = ||w||_2^2 = w^T w
+  $$
+
+这也常被称为**权重衰减 (Weight Decay)**。
 
 ### 2.2 岭回归 (Ridge Regression)
 
@@ -275,12 +286,16 @@ $$
 
 代入高斯似然和高斯先验：
 *   **似然函数 (Likelihood)** $y | w \sim \mathcal{N}(w^T x, \sigma^2)$：
+
     $$
     p(y|w) = \prod_{i=1}^{N} \frac{1}{\sqrt{2\pi}\sigma} \exp\left\{ -\frac{(y_i - w^T x_i)^2}{2\sigma^2} \right\}
+
     $$
 *   **先验概率 (Prior)** $w \sim \mathcal{N}(0, \sigma_0^2 I)$：
+
     $$
     p(w) = \frac{1}{(2\pi \sigma_0^2)^{p/2}} \exp\left\{ -\frac{||w||^2}{2\sigma_0^2} \right\}
+
     $$
 
 取对数：
