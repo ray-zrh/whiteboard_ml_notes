@@ -10,6 +10,13 @@
 *   **可视化**：编写 Python 脚本生成插图，辅助直观理解几何意义。
 *   **结构清晰**：跟随原视频章节组织笔记内容。
 
+## 📖 阅读建议 (Reading Recommendations)
+
+为了获得最佳的阅读体验（尤其是数学公式的渲染），**推荐下载 PDF 版本阅读**：
+
+1.  进入 [pdf/chapters](pdf/chapters) 目录。
+2.  下载对应的 `chXX_topic.pdf` 文件。
+
 ## 📚 目录 (Table of Contents)
 
 | Chapter | Title | Status |
@@ -19,5 +26,7 @@
 | **03** | [线性回归 (Linear Regression)](notes/chapters/ch03_linear_regression.md) | ✅ Done |
 | **04** | [线性分类 (Linear Classification)](notes/chapters/ch04_linear_classification.md) | ✅ Done |
 | **05** | [降维 (Dimensionality Reduction)](notes/chapters/ch05_dimensionality_reduction.md) | ✅ Done |
-| **06** | [支持向量机 (Support Vector Machine)](notes/chapters/ch06_support_vector_machine.md) | 🚧 Planned |
+| **06** | [支持向量机 (Support Vector Machine)](notes/chapters/ch06_support_vector_machine.md) | ✅ Done |
+| **07** | [核方法 (Kernel Method)](notes/chapters/ch07_kernel_method.md) | ✅ Done |
+| **08** | [指数族分布 (Exponential Family Distribution)](notes/chapters/ch08_exponential_family_distribution.md) | 🚧 Planned |
 
