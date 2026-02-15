@@ -138,9 +138,9 @@ $H$ 具有以下重要性质：
 1. **对称性**: $H^T = (I_N - \frac{1}{N} 1_N 1_N^T)^T = I_N - \frac{1}{N} (1_N 1_N^T)^T = H$
 
 2.  **幂等性**: $H^2 = H \cdot H = H$
-    
+
     *   证明:
-    
+
     $$
     \begin{aligned}
     H^2 &= (I_N - \frac{1}{N} 1_N 1_N^T)(I_N - \frac{1}{N} 1_N 1_N^T) \\

@@ -28,5 +28,9 @@
 | **05** | [降维 (Dimensionality Reduction)](notes/chapters/ch05_dimensionality_reduction.md) | ✅ Done |
 | **06** | [支持向量机 (Support Vector Machine)](notes/chapters/ch06_support_vector_machine.md) | ✅ Done |
 | **07** | [核方法 (Kernel Method)](notes/chapters/ch07_kernel_method.md) | ✅ Done |
-| **08** | [指数族分布 (Exponential Family Distribution)](notes/chapters/ch08_exponential_family_distribution.md) | 🚧 Planned |
+| **08** | [指数族分布 (Exponential Family Distribution)](notes/chapters/ch08_exponential_family_distribution.md) | ✅ Done |
+| **09** | [概率图 (Probabilistic Graphical Model)](notes/chapters/ch09_probabilistic_graph_model.md) | ✅ Done |
+| **10** | [EM 算法 (EM Algorithm)](notes/chapters/ch10_EM_algorithm.md) | ✅ Done |
+| **11** | [高斯混合模型 (Gaussian Mixture Model)](notes/chapters/ch11_gaussian_mixture_model.md) | ✅ Done |
+| **12** | [变分推断 (Variational Inference)](notes/chapters/ch12_variational_inference.md) | 🚧 Planned |
 
