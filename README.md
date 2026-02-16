@@ -32,5 +32,7 @@
 | **09** | [概率图 (Probabilistic Graphical Model)](notes/chapters/ch09_probabilistic_graph_model.md) | ✅ Done |
 | **10** | [EM 算法 (EM Algorithm)](notes/chapters/ch10_EM_algorithm.md) | ✅ Done |
 | **11** | [高斯混合模型 (Gaussian Mixture Model)](notes/chapters/ch11_gaussian_mixture_model.md) | ✅ Done |
-| **12** | [变分推断 (Variational Inference)](notes/chapters/ch12_variational_inference.md) | 🚧 Planned |
+| **12** | [变分推断 (Variational Inference)](notes/chapters/ch12_variational_inference.md) | ✅ Done |
+| **13** | [马尔可夫链蒙特卡洛 (Markov Chain Monte Carlo)](notes/chapters/ch13_markov_chain_monte_carlo.md) | ✅ Done |
+| **14** | [隐马尔可夫模型 (Hidden Markov Model)](notes/chapters/ch14_hidden_markov_model.md) | 🚧 Planned |
 
