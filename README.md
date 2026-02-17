@@ -34,5 +34,6 @@
 | **11** | [高斯混合模型 (Gaussian Mixture Model)](notes/chapters/ch11_gaussian_mixture_model.md) | ✅ Done |
 | **12** | [变分推断 (Variational Inference)](notes/chapters/ch12_variational_inference.md) | ✅ Done |
 | **13** | [马尔可夫链蒙特卡洛 (Markov Chain Monte Carlo)](notes/chapters/ch13_markov_chain_monte_carlo.md) | ✅ Done |
-| **14** | [隐马尔可夫模型 (Hidden Markov Model)](notes/chapters/ch14_hidden_markov_model.md) | 🚧 Planned |
-
+| **14** | [隐马尔可夫模型 (Hidden Markov Model)](notes/chapters/ch14_hidden_markov_model.md) | ✅ Done |
+| **15** | [线性动态系统 (Linear Dynamic System)](notes/chapters/ch15_linear_dynamic_system.md) | ✅ Done |
+| **16** | [粒子滤波 (Particle Filter)](notes/chapters/ch16_particle_filter.md) | 🚧 Planned |
