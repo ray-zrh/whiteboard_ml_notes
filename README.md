@@ -36,4 +36,6 @@
 | **13** | [马尔可夫链蒙特卡洛 (Markov Chain Monte Carlo)](notes/chapters/ch13_markov_chain_monte_carlo.md) | ✅ Done |
 | **14** | [隐马尔可夫模型 (Hidden Markov Model)](notes/chapters/ch14_hidden_markov_model.md) | ✅ Done |
 | **15** | [线性动态系统 (Linear Dynamic System)](notes/chapters/ch15_linear_dynamic_system.md) | ✅ Done |
-| **16** | [粒子滤波 (Particle Filter)](notes/chapters/ch16_particle_filter.md) | 🚧 Planned |
+| **16** | [粒子滤波 (Particle Filter)](notes/chapters/ch16_particle_filter.md) | ✅ Done |
+| **17** | [条件随机场 (Conditional Random Field)](notes/chapters/ch17_conditional_random_field.md) | ✅ Done |
+| **18** | [高斯网络 (Gaussian Network)](notes/chapters/ch18_gaussian_network.md) | 🚧 Planned |
