@@ -1,4 +1,4 @@
-# 变分推断
+# 变分推断 (Variational Inference)
 
 ## 1. 背景 (Background)
 

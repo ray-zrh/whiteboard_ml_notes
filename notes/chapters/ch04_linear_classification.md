@@ -1,4 +1,4 @@
-# 线性分类
+# 线性分类 (Linear Classification)
 
 ## 1. 背景与分类 (Background & Taxonomy)
 
@@ -156,12 +156,10 @@ LDA 的核心思想是**降维 (Dimensionality Reduction)** 和 **分类**。我
 
     $$
     \bar{z}_1 = \frac{1}{N_1} \sum_{i \in c1} w^T x_i = w^T \bar{x}_1
-
     $$
-
+    
     $$
     \bar{z}_2 = w^T \bar{x}_2
-
     $$
 *   **类间距离**：$(\bar{z}_1 - \bar{z}_2)^2$。我们需要最大化它。
 
@@ -170,14 +168,12 @@ LDA 的核心思想是**降维 (Dimensionality Reduction)** 和 **分类**。我
 
     $$
     S_1 = \sum_{i \in c1} (z_i - \bar{z}_1)^2 = \sum_{i \in c1} (w^T x_i - w^T \bar{x}_1)^2
-
-    $$
+$$
 *   投影后类 $c2$ 的方差：
 
     $$
     S_2 = \sum_{i \in c2} (z_i - \bar{z}_2)^2
-
-    $$
+$$
 *   **类内方差和**：$S_1 + S_2$。我们需要最小化它。
 
 #### 3. 目标函数与矩阵推导 (Objective & Matrix Derivation)
@@ -300,10 +296,9 @@ $$
     P(Y=0|x) = 1 - P(Y=1|x) = \frac{e^{-w^T x}}{1 + e^{-w^T x}} \triangleq p_0
     \end{cases}
     $$
-令 $\psi(x; w) = \sigma(w^T x)$，则可以将上述两个式子合并为：
+    令 $\psi(x; w) = \sigma(w^T x)$，则可以将上述两个式子合并为：
 $$
 P(Y=y|x) = p_1^y p_0^{1-y} = [\psi(x; w)]^y [1 - \psi(x; w)]^{1-y}
-
 $$
 
 ### 4.2 极大似然估计 (MLE)
