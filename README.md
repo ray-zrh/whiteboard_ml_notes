@@ -41,5 +41,8 @@
 | **18** | [高斯网络 (Gaussian Network)](notes/chapters/ch18_gaussian_network.md) | ✅ Done |
 | **19** | [贝叶斯线性回归 (Bayesian Linear Regression)](notes/chapters/ch19_bayesian_linear_regression.md) | ✅ Done |
 | **20** | [高斯过程 (Gaussian Process)](notes/chapters/ch20_guassian_process.md) | ✅ Done |
-| **21** | [受限玻尔兹曼机 (Restricted Boltzmann Machine)](notes/chapters/ch21_restricted_boltzmann_machine.md) | 🚧 Planned |
+| **21** | [受限玻尔兹曼机 (Restricted Boltzmann Machine)](notes/chapters/ch21_restricted_boltzmann_machine.md) | ✅ Done |
+| **22** | [谱聚类 (Spectral Clustering)](notes/chapters/ch22_spectral_clustering.md) | ✅ Done |
+| **23** | [前馈神经网络 (Feedforward Neural Network)](notes/chapters/ch23_feedforward_neural_network.md) | ✅ Done |
+| **24** | [配分函数 (Partition Function)](notes/chapters/ch24_partition_function.md) | 🚧 Planned |
 
