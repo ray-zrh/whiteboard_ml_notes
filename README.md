@@ -46,5 +46,7 @@
 | **23** | [前馈神经网络 (Feedforward Neural Network)](notes/chapters/ch23_feedforward_neural_network.md) | ✅ Done |
 | **24** | [配分函数 (Partition Function)](notes/chapters/ch24_partition_function.md) | ✅ Done |
 | **25** | [近似推断 (Approximate Inference)](notes/chapters/ch25_approximate_inference.md) | ✅ Done |
-| **26** | [Sigmoid信念网络 (Sigmoid Belief Network)](notes/chapters/ch26_sigmoid_belief_network.md) | 🚧 Planned |
+| **26** | [Sigmoid信念网络 (Sigmoid Belief Network)](notes/chapters/ch26_sigmoid_belief_network.md) | ✅ Done |
+| **27** | [深度信念网络 (Deep Belief Network)](notes/chapters/ch27_deep_belief_network.md) | ✅ Done |
+| **28** | [玻尔兹曼机 (Boltzmann Machine)](notes/chapters/ch28_boltzmann_machine.md) | 🚧 Planned |
 
