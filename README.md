@@ -48,5 +48,7 @@
 | **25** | [近似推断 (Approximate Inference)](notes/chapters/ch25_approximate_inference.md) | ✅ Done |
 | **26** | [Sigmoid信念网络 (Sigmoid Belief Network)](notes/chapters/ch26_sigmoid_belief_network.md) | ✅ Done |
 | **27** | [深度信念网络 (Deep Belief Network)](notes/chapters/ch27_deep_belief_network.md) | ✅ Done |
-| **28** | [玻尔兹曼机 (Boltzmann Machine)](notes/chapters/ch28_boltzmann_machine.md) | 🚧 Planned |
-
+| **28** | [玻尔兹曼机 (Boltzmann Machine)](notes/chapters/ch28_boltzmann_machine.md) | ✅ Done |
+| **29** | [变分自编码器 (Variational Auto-Encoder)](notes/chapters/ch29_variational_auto_encoder.md) | ✅ Done |
+| **30** | [生成模型 (Generative Model)](notes/chapters/ch30_generative_model.md) | ✅ Done |
+| **31** | [生成对抗网络 (Generative Adversarial Network)](notes/chapters/ch31_generative_adversial_network.md) | 🚧 Planned |
