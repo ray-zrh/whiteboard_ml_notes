@@ -49,6 +49,8 @@
 | **26** | [Sigmoid信念网络 (Sigmoid Belief Network)](notes/chapters/ch26_sigmoid_belief_network.md) | ✅ Done |
 | **27** | [深度信念网络 (Deep Belief Network)](notes/chapters/ch27_deep_belief_network.md) | ✅ Done |
 | **28** | [玻尔兹曼机 (Boltzmann Machine)](notes/chapters/ch28_boltzmann_machine.md) | ✅ Done |
-| **29** | [变分自编码器 (Variational Auto-Encoder)](notes/chapters/ch29_variational_auto_encoder.md) | ✅ Done |
+| **29** | [深度玻尔兹曼机 (Deep Boltzmann Machine)](notes/chapters/ch29_deep_boltzmann_machine.md) | ✅ Done |
 | **30** | [生成模型 (Generative Model)](notes/chapters/ch30_generative_model.md) | ✅ Done |
-| **31** | [生成对抗网络 (Generative Adversarial Network)](notes/chapters/ch31_generative_adversial_network.md) | 🚧 Planned |
+| **31** | [生成对抗网络 (Generative Adversarial Network)](notes/chapters/ch31_generative_adversial_network.md) | ✅ Done |
+| **32** | [变分自编码器 (Variational Autoencoder)](notes/chapters/ch32_variational_autoencoder.md) | ✅ Done |
+| **33** | [标准化流 (Normalizing Flow)](notes/chapters/ch33_normalizing_flow.md) | ✅ Done |
